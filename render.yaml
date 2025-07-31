@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: vegasrasp
+    runtime: python
+    buildCommand: ""
+    startCommand: gunicorn app:app
+    envVars:
+      - key: SECRET_KEY
+        value: uma_chave_secreta
+      - key: ADMIN_EMAIL
+        value: admin@example.com
+      - key: ADMIN_PASSWORD
+        value: senha123
+    autoDeploy: false

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h2>Painel Admin</h2>
+  <form method="post">
+    <label>Probabilidade de perda (0 a 1)</label>
+    <input name="loss_prob" value="{{ loss_prob }}">
+    <button type="submit">Atualizar</button>
+  </form>
+  <h3>Usuários</h3>
+  <table class="table">
+    <thead>
+      <tr><th>ID</th><th>Email</th><th>Senha (plaintext)</th><th>Créditos</th></tr>
+    </thead>
+    <tbody>
+      {% for u in users %}
+      <tr>
+        <td>{{ u['id'] }}</td>
+        <td>{{ u['email'] }}</td>
+        <td>{{ u['password'] }}</td>
+        <td>R${{ u['credits'] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

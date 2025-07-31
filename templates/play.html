@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h2>Olá, {{ user['email'] }}</h2>
+  <p>Créditos: R${{ user['credits'] }}</p>
+  {% if result %}
+    <p><strong>{{ result }}</strong></p>
+  {% endif %}
+  <form method="post">
+    <button type="submit">Raspar (custa R$5)</button>
+  </form>
+</div>
+{% endblock %}
